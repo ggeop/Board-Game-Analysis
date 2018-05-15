@@ -23,9 +23,12 @@ BoardGameGeek is an online forum for board gaming hobbyists and a game database 
 ## Dataset
 
 We use as our dataset which contains the attributes and the ratings for around 94.000 among board games and expansions, from BoardGameGeek. A few details about our initial dataset:
+
 •	The initial size was around 150MB
 •	Around 94.000 rows & 80 columns
+
 Each row represents a single board game and has descriptive statistics about the board game, as well as review information. Some interesting columns for analysis are:
+
 •	game.type – Board games are divided in two categories, “BoardGames” & “BoardGames Expanions”
 •	details.maxplayers – Suggested max number of players (given by the manufacturer)
 •	details.maxplaytime – Maximum playing time (given by the manufacturer)
@@ -226,7 +229,7 @@ Creating the bridge tables for categories and mechanic:
 6.	write.csv(bridge_mechanic,'bridge_mechanic.csv',row.names = FALSE)
 ```
 
-Finally creating the fact table:
+Finally, creating the fact table:
 
 ```
 1.	 BoardGames$details.maxplayers<- maxplayersDim$id[match(BoardGames$details.maxplayers,maxplayersDim$maxplayersLabel)]
@@ -237,5 +240,62 @@ Finally creating the fact table:
 5.	write.csv(BoardGames,'fact_table.csv',row.names = FALSE) 
 ```
 
+After cleaning procedure we have a dataset with:
 
+•	10 CSVs
+o	Fact_table.csv
+o	Bridge_categories.csv
+o	Bridge_mechanic.scv
+o	MechanicDim.csv
+o	CategoriesDim.csv
+o	maxplayersDim.csv
+o	minplayersDim.csv
+o	minageDim.csv 
+o	nameDim.csv
+o	yearDim.csv
+•	21.371 rows & 18 columns
+•	Total size 2.6 MB
 
+### Load Dataset to SQL Server
+In this step firstly we create the database DATADB2 in Microsoft SQL Server.
+
+We run the following code:
+
+```
+1.	#DB connection            
+2.	dbhandle <- odbcDriverConnect('driver={SQL Server};server=.;database=dmbiDB;trusted_connection=true')
+3.	
+4.	
+5.	#Bulk insert Fact table
+6.	sqlSave(dbhandle, BoardGames, tablename = "fact")
+7.	
+8.	#Insert Dimentions
+9.	sqlSave(dbhandle, nameDim, tablename = "nameDim")
+10.	sqlSave(dbhandle, maxplayersDim, tablename = "maxplayersDim")
+11.	sqlSave(dbhandle, yearDim, tablename = "yearDim")
+12.	sqlSave(dbhandle, minageDim, tablename = "minageDim")
+13.	sqlSave(dbhandle, minplayersDim, tablename = "minplayersDim")
+14.	
+15.	#Insert category and mechanic tables
+16.	sqlSave(dbhandle, categoryDim, tablename = "categoryDim")
+17.	sqlSave(dbhandle, mechanicDim, tablename = "mechanicDim")
+18.	
+19.	#Insert bridge tables
+20.	sqlSave(dbhandle, bridge_categories, tablename = "bridge_categories")
+21.	sqlSave(dbhandle, bridge_mechanic, tablename = "bridge_mechanic")  
+
+```
+### Star Schema
+In this step we have to create table relationships. We have attached the database Schema in the directory.
+
+## Statistical Analysis
+
+### SPSS
+
+In SPSS Statistics, we used fifteen (15) variables: 1) “stats.average”, which is the average score for every game, 2) “stats.wishing”, the users who wish to get the game, 3) “details.minplayers”, the minimum players to play the game, 4)  “details.maxplaytime”, the maximum playing time, 5) “details.minage” the minimum age to play the game, 6) “details.maxplayers” the maximum players to play the game, 7) “attributes.total” the tags description for the game, 8) “stats.averageweight” the average difficulty of the game, 9) “stats.trading”, the users who want to trade the game, 10) “details.minplaytime”, the minimum playing time, 11) “stats.numweights”, the number of users who give the difficulty value, 12) “stats.owned”, the number of users who own the game , 13) “stats.wanting”, the number of users who want the game, 14) “stats.numcomments”, the number of users who comment about the game, 15) “stats.usersrated”, the number of users who rated the game.
+
+### Correlations
+
+Correlations tell you what columns are closely related to the column you are interested in. The closer to 0 the correlation, the weaker the connection. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.
+As we see above a couple of columns show higher values of correlating with our average_rating column. The average_weight column seems to be correlated with our average_rating column implying the more "weight" a game has the more highly it tends to be rated. Weight is a subjective measure that is made up by BoardGameGeek. It describes how "deep" or involved a game is.
+We can also note that games for older players, where minage is high, tend to have higher average rating. The yearpublished correlation values tell us that newer games tend to have a higher rating.
