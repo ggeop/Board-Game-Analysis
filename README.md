@@ -299,3 +299,8 @@ In SPSS Statistics, we used fifteen (15) variables: 1) “stats.average”, whic
 Correlations tell you what columns are closely related to the column you are interested in. The closer to 0 the correlation, the weaker the connection. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.
 As we see above a couple of columns show higher values of correlating with our average_rating column. The average_weight column seems to be correlated with our average_rating column implying the more "weight" a game has the more highly it tends to be rated. Weight is a subjective measure that is made up by BoardGameGeek. It describes how "deep" or involved a game is.
 We can also note that games for older players, where minage is high, tend to have higher average rating. The yearpublished correlation values tell us that newer games tend to have a higher rating.
+
+
+### Visualizations in Tableau
+
+![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture.PNG)
