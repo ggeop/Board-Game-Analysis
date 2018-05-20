@@ -301,22 +301,31 @@ As we see above a couple of columns show higher values of correlating with our a
 We can also note that games for older players, where minage is high, tend to have higher average rating. The yearpublished correlation values tell us that newer games tend to have a higher rating.
 
 
-### Visualizations in Tableau
+##Visualizations in Tableau
 
+### General Trend
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture.PNG)
 
+### Difficulty Trend
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture2.PNG)
 
-![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture3.PNG)
-
+### Playing Time Trend
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture4.PNG)
 
+### Playing Time Trend For Each Category
+![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture3.PNG)
+
+### Game Categories & Mechanic Type Distribution
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture6.PNG)
 
+### Ratings Distribution & Ratings Trend
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture7.PNG)
 
+### Difficulty among Categories & Mechanics Type
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture8.PNG)
 
+### Top 10 Caategories
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture9.PNG)
 
+### Top 10 Games
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture5.PNG)
