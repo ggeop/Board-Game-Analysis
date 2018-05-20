@@ -311,8 +311,6 @@ We can also note that games for older players, where minage is high, tend to hav
 
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture4.PNG)
 
-![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture5.PNG)
-
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture6.PNG)
 
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture7.PNG)
@@ -320,3 +318,5 @@ We can also note that games for older players, where minage is high, tend to hav
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture8.PNG)
 
 ![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture9.PNG)
+
+![alt text](https://github.com/ggeop/Board-Game-Analysis/blob/master/Visualizations/Capture5.PNG)
